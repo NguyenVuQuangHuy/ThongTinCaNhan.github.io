@@ -1,0 +1,189 @@
+/* --- CSS CHO TRANG DỰ ÁN --- */
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto; /* Căn giữa màn hình */
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    border-bottom: 2px solid cornflowerblue;
+    display: inline-block; /* Để gạch chân chỉ dài bằng chữ */
+    padding-bottom: 10px;
+    /* Mẹo căn giữa block title */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Cấu trúc Lưới (Grid) - Tự động chia cột */
+.project-grid {
+    display: grid;
+    /* Dòng này cực hay: Tự động chia cột, mỗi cột tối thiểu 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; /* Khoảng cách giữa các ô */
+}
+
+/* Giao diện từng thẻ Dự án (Card) */
+.project-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Đổ bóng nhẹ cho đẹp */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+}
+
+/* Hiệu ứng nhấc lên khi di chuột vào */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.project-content {
+    padding: 20px;
+}
+
+.project-content h2 {
+    margin-top: 0;
+    color: cornflowerblue;
+    font-size: 1.5rem;
+}
+
+.project-desc {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    height: 80px; /* Cố định chiều cao mô tả để các thẻ bằng nhau */
+    overflow: hidden; /* Ẩn chữ nếu quá dài */
+}
+
+.project-info {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.project-info li {
+    margin-bottom: 5px;
+}
+
+/* Nút Link */
+.btn-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: cornflowerblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-link:hover {
+    background-color: #3b6ccf;
+}
+
+/* --- CSS CHO GALLERY --- */
+
+/* 1. Phần Grid bạn gửi (Đã tối ưu) */
+.image-grid {
+    display: grid;
+    /* Tự động chia cột: mỗi cột tối thiểu 200px */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 250px;     /* Bắt buộc chiều cao bằng nhau để lưới đẹp */
+    object-fit: cover; /* Cắt ảnh để không bị méo hình */
+    display: block;
+    cursor: pointer;
+    border-radius: 8px; /* Bo góc nhẹ cho đẹp */
+    transition: transform 0.3s ease; /* Hiệu ứng mượt */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Hiệu ứng khi di chuột vào ảnh */
+.image-grid img:hover {
+    transform: scale(1.03); /* Phóng to nhẹ */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* 2. Phần MODAL (Lightbox) - Màn hình đen khi phóng to */
+.modal {
+    display: none; /* Mặc định ẩn */
+    position: fixed;
+    z-index: 9999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9); /* Màu đen trong suốt */
+}
+
+/* Ảnh khi phóng to */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 5px;
+    animation: zoom 0.5s; /* Hiệu ứng zoom */
+}
+
+/* Chữ chú thích dưới ảnh */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    font-size: 1.2rem;
+}
+
+/* Nút đóng (X) */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #bbb;
+}
+
+/* Hiệu ứng Zoom Animation */
+@keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Responsive cho điện thoại */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}

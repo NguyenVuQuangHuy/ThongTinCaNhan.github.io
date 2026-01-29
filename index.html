@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="noindex" />
+        <title>Thông tin cá nhân - Nguyễn Vũ Quang Huy</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <style>
+        /* 1. Xóa dấu chấm và chỉnh font to cho phần Info */
+        .info-list {
+            list-style: none; /* Mất dấu chấm */
+            padding: 0;
+        }
+        .info-list li {
+            font-size: 1.1rem; /* Chữ to hơn một chút */
+            margin-bottom: 10px; /* Cách dòng cho thoáng */
+        }
+    </style>
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li style="color: red">
+                        <a href="index.html">Thông tin</a>
+                    </li>
+                    <li><a href="DuAn.html">Dự án</a></li>
+                    <li><a href="KinhNghiem.html">Kinh nghiệm</a></li>
+                    <li><a href="SoThich.html">Sở thích</a></li>
+                    <li><a href="Themanh.html">Thế mạnh</a></li>
+                    <li><a href="Sach.html">Sách</a></li>
+                    <li>
+                        <a href="ChungChi.html">Chứng chỉ </a>
+                    </li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                </ul>
+            </nav>
+            <div class="profile-header">
+                <div class="image-grid">
+                    <img
+                        src="Anh/AnhDaiDien.jpg"
+                        alt="Nguyễn Vũ Quang Huy"
+                        onclick="openModal(this)"
+                    />
+                </div>
+                <h1>Nguyễn Vũ Quang Huy</h1>
+                <p class="job-title">
+                    Sinh viên Trường đại học Công nghệ Thông tin - ĐHQG TP.HCM
+                </p>
+            </div>
+        </header>
+
+        <div class="project-grid">
+            <div class="project-card">
+                <h3 style="color: cornflowerblue">Thông tin liên hệ</h3>
+                <ul class="info-list">
+                    <li><strong>Ngày sinh:</strong> 03/02/2006</li>
+                    <li>
+                        <strong>Email:</strong>
+                        <a href="mailto:huylqd30@gmail.com"
+                            >huylqd30@gmail.com</a
+                        >
+                    </li>
+                    <li><strong>Địa chỉ:</strong> TP. Hồ Chí Minh</li>
+                    <li><strong>Số điện thoại:</strong> 09xxxxxxxxx</li>
+                </ul>
+            </div>
+        </div>
+
+        <section>
+            <h3 style="color: cornflowerblue">Giới thiệu</h3>
+            <p>
+                Mình là sinh viên năm 2 chuyên ngành Thương mại điện tử. Mình
+                thích tìm hiểu về cấu trúc dữ liệu, SQL và xây dựng các website
+                tối ưu hiệu năng.
+            </p>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Nguyễn Vũ Quang Huy.</p>
+        </footer>
+    </body>
+</html>
